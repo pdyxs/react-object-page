@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import nodeExternals from 'webpack-node-externals';
 
 export default {
   devtool: 'source-map',
@@ -17,6 +18,7 @@ export default {
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
   ],
+  externals: [nodeExternals()],
   module: {
     rules: [
       {
