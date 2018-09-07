@@ -1,13 +1,17 @@
 {
-  "name": "react-library-starter",
-  "version": "0.0.1",
-  "description": "A react library starter project",
+  "name": "react-object-page",
+  "version": "0.1.0",
+  "description": "React Object Page components",
   "main": "dist/index.js",
   "license": "APACHE",
   "scripts": {
     "lint": "eslint src",
     "build": "webpack",
     "prepare": "rimraf dist && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pdyxs/react-object-page.git"
   },
   "dependencies": {
     "babel-core": "^6.0.20",
@@ -23,7 +27,11 @@
     "babel-preset-stage-0": "^6.0.15",
     "flow-bin": "^0.37.4",
     "react": "^16.4.2",
+    "react-decorators": "git+https://github.com/pdyxs/react-decorators.git",
     "react-dom": "^16.4.2",
+    "react-editable": "git+https://github.com/pdyxs/react-editable.git",
+    "react-markdown": "^3.6.0",
+    "react-router-dom": "^4.3.1",
     "rimraf": "^2.5.4",
     "webpack": "^2.2.0"
   },
