@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ObjectList from './ObjectList';
 import ReactMarkdown from 'react-markdown';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import { LoadingIcon } from 'react-decorators';
+import { LoadingIcon } from '@pdyxs/re-decorate';
 import NewObjectForm from './NewObjectForm';
 
 class ObjectPage extends Component {

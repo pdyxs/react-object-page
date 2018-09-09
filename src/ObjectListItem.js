@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { LoadingIcon, DeleteButton } from 'react-decorators';
+import { LoadingIcon, DeleteButton } from '@pdyxs/re-decorate';
 import ObjectList from './ObjectList';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { EditableText } from 'react-editable';
+import { EditableText } from 're-editable';
 
 class ObjectListItem extends Component {
   constructor() {

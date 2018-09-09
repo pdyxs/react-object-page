@@ -14,6 +14,7 @@
     "url": "https://github.com/pdyxs/react-object-page.git"
   },
   "dependencies": {
+    "@pdyxs/re-decorate": "^0.1.0",
     "babel-core": "^6.0.20",
     "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.10",
@@ -26,10 +27,9 @@
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
     "flow-bin": "^0.37.4",
+    "re-editable": "^0.1.0",
     "react": "^16.4.2",
-    "react-decorators": "git+https://github.com/pdyxs/react-decorators.git",
     "react-dom": "^16.4.2",
-    "react-editable": "git+https://github.com/pdyxs/react-editable.git",
     "react-markdown": "^3.6.0",
     "react-router-dom": "^4.3.1",
     "rimraf": "^2.5.4",

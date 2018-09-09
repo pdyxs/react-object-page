@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NewObjectForm from './NewObjectForm';
 import ObjectListItem from './ObjectListItem';
-import { LoadingIcon } from 'react-decorators';
+import { LoadingIcon } from '@pdyxs/re-decorate';
 import { withRouter } from 'react-router-dom';
 
 class ObjectList extends Component {
