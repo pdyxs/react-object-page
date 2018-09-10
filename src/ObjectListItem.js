@@ -58,7 +58,7 @@ class ObjectListItem extends Component {
                   </span>
                 }
                 <strong>
-                  <EditableText value={item.name} onChange={this.onNameChange} />
+                  <EditableText value={item.name} onChange={this.onNameChange} canEdit={this.props.onEdit != null} />
                 </strong>
                 { SelectedItemComponent &&
                   <SelectedItemComponent item={item} {...otherProps} />
