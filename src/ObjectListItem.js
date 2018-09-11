@@ -64,7 +64,9 @@ class ObjectListItem extends Component {
                   <SelectedItemComponent item={item} {...otherProps} />
                 }
               </div>
-              <DeleteButton className="position-absolute mr-2" style={{right: '0'}} onDelete={this.handleRemove} url={url} />
+              { this.props.onRemove &&
+                <DeleteButton className="position-absolute mr-2" style={{right: '0'}} onDelete={this.handleRemove} url={url} />
+              }
             </div> :
             <Link
               to={fullUrl}

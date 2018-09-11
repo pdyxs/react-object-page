@@ -27,6 +27,7 @@ class ObjectList extends Component {
       isRecursive,
       className,
       onEdit,
+      onRemove,
       ...otherProps
     } = this.props;
     var ObjectComponent = this.props.ObjectComponent || ObjectListItem;
@@ -44,6 +45,7 @@ class ObjectList extends Component {
               isRecursive={isRecursive}
               NewObjectForm={this.props.NewObjectForm}
               onEdit={((!this.props.canEdit || this.props.canEdit(o)) ? onEdit : null )}
+              onRemove={((!this.props.canRemove || this.props.canRemove(o)) ? onRemove : null )}
               {...otherProps}
               />
           ))}
