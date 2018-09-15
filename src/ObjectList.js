@@ -36,7 +36,7 @@ class ObjectList extends Component {
     if (objects) {
       return (
         <ul className={'list-group ' + className + (parent == null ? '' : ' ml-4')}>
-          {objects.map(o => (!isRecursive || (o.active && parent == o.parent)) && (
+          {objects.map(o => (!isRecursive || (parent == o.parent)) && (
             <ObjectComponent key={o.id}
               typeName={typeName}
               objects={objects}
