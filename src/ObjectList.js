@@ -3,6 +3,7 @@ import NewObjectForm from './NewObjectForm';
 import ObjectListItem from './ObjectListItem';
 import { LoadingIcon } from '@pdyxs/re-decorate';
 import { withRouter } from 'react-router-dom';
+import _ from 'lodash';
 
 class ObjectList extends Component {
   constructor() {
@@ -36,7 +37,7 @@ class ObjectList extends Component {
     if (objects) {
       return (
         <ul className={'list-group ' + className + (parent == null ? '' : ' ml-4')}>
-          {objects.map(o => (!isRecursive || (parent == o.parent)) && (
+          {_.map(objects, o => (!isRecursive || (parent == o.parent)) && (
             <ObjectComponent key={o.id}
               typeName={typeName}
               objects={objects}
@@ -49,7 +50,7 @@ class ObjectList extends Component {
               {...otherProps}
               />
           ))}
-          { (!isRecursive || parent == null || isParentSelected) &&
+          { onAdd && (!isRecursive || parent == null || isParentSelected) &&
             <li
               className="list-group-item p-0 mr-0 rounded-0">
               <NewFormComponent

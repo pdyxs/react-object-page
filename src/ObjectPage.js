@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { LoadingIcon } from '@pdyxs/re-decorate';
 import NewObjectForm from './NewObjectForm';
+import _ from 'lodash';
 
 class ObjectPage extends Component {
   constructor() {
@@ -43,9 +44,11 @@ class ObjectPage extends Component {
     let routeUrl = this.props.routeUrl || url;
     var NewFormComponent = this.props.NewObjectForm || NewObjectForm;
 
+    var idname = (objectName || typeName.toLowerCase()) + 'id';
+
     return (
-      <div className={className + " row"}>
-        <div className="col-md-4 p-0">
+      <div className={`object-page ${className ? className : ''} row`}>
+        <div className="object-list-container col-md-4 p-0">
           <ObjectList
             className="d-none d-md-block"
             objects={objects}
@@ -61,7 +64,7 @@ class ObjectPage extends Component {
               value={this.props.match.params[`${typeName}id`] || ''}
               className="custom-select">
               <option value="" disabled>Choose a {objectName}</option>
-              { objects.map(o => (
+              { _.map(objects, o => (
                   <option key={o.id} value={o.id}>{o.name}</option>
               ))}
             </select>
@@ -70,9 +73,12 @@ class ObjectPage extends Component {
               placeholder={'New ' + typeName + ' Name'} {...otherProps} />
           </div>
         </div>
-        <div className="col-md-8 border bg-white p-3">
+        <div className="object-page-container col-md-8 border bg-white p-3">
           <Route path={routeUrl} exact component={ReactMarkdown} source={instructions} />
-          <Route path={routeUrl + '/:' + (objectName || typeName.toLowerCase()) + 'id'} component={PageComponent} onEdit={onEdit} />
+          <Route path={routeUrl + '/:' + idname}
+            render={(props) => (
+              <PageComponent objects={objects} onEdit={onEdit} {...props} />
+            )} />
         </div>
       </div>
     )
