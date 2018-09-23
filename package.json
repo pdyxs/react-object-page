@@ -1,6 +1,6 @@
 {
   "name": "react-object-page",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "React Object Page components",
   "main": "dist/index.js",
   "license": "APACHE",
