@@ -33,6 +33,7 @@ class ObjectPage extends Component {
       url,
       className,
       PageRouter,
+      match,
       ...otherProps
     } = this.props;
 
@@ -77,7 +78,7 @@ class ObjectPage extends Component {
           <Route path={routeUrl} exact component={ReactMarkdown} source={instructions} />
           <Route path={routeUrl + '/:' + idname}
             render={(props) => (
-              <PageComponent objects={objects} onEdit={onEdit} {...props} />
+              <PageComponent objects={objects} onEdit={onEdit} {...props} {...otherProps} />
             )} />
         </div>
       </div>
